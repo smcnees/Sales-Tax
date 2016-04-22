@@ -1,0 +1,56 @@
+<html>
+
+<head>
+
+<style>
+body{
+    background-color: #E0E0E0;}
+
+   h1{font-family: Arial;
+     text-align: center;
+     font-size: 1.8em;
+	 }
+	
+   h2{font-family: Arial;
+      text-align: center;
+	  }
+
+   p{font-family: Arial;
+     font-size: .9em;
+	 font-weight: 2px;
+	 }
+</style>
+
+</head>
+<body>
+
+<h1>Order 2 Receipt</h1>
+
+
+<p> 1 Imported Chocolate: $10.00<br />
+    1 Imported Perfume: $47.50 
+</p> 
+
+<p id = "tax2"></p>
+<p id= "total2"></p>
+
+<script>
+    var $book = 12.49;	
+	var $CD = 14.99;
+	var $chocBar = .85;
+	
+	var $impChoc1 = 10.00;
+	var $impPerfume1 = 47.50; 
+	var $imp =.15;
+	
+	var $impex = .05;
+	var $tax2 = (($impChoc1 * $impex) + ($impPerfume1 * $imp));
+	var $total2 = ($impChoc1 + $impPerfume1 + (($impChoc1 * $impex) + ($impPerfume1 * $imp)));
+
+document.getElementById("tax2").innerHTML ="Tax: $" + $tax2.toFixed(2);		
+document.getElementById("total2").innerHTML ="Total: $" + $total2.toFixed(2);
+</script>
+
+
+</body>
+</html>

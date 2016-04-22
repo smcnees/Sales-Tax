@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--
+
+Sendachi Coding Challenge - Sales Tax
+
+Scott McNees
+4/17/2016
+
+-->
+<style>
+   body{
+    background-color: #33ffff;
+	border: 3px solid;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 20px;		}
+
+   h1{font-family: Arial;
+      img: src= tax.jpg
+      border: 1px solid;
+	  border-radius: 10px;
+	  background-color: #A0A0A0;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 1.8em;	 
+	 }
+	
+   h2{font-family: Arial;
+      color: #808080;
+	  margin: 25px; }
+
+   p{font-family: Arial;
+     font-size: .9em
+	 
+	 margin: 25px;
+	 
+	 }
+   a href{font-size: 4em;}
+   div{text-align: center;}
+
+</style>
+</head>
+<body>
+<h1>Sales Tax Coding Challenge</h1>
+
+<img src="tax.jpg" alt="tax" style="width:304px;height:228px;">
+
+
+<h2> Order 1 </h2>
+
+<p> 1   Book:          $12.49 <br />
+    1   CD:            $14.99 <br />
+    1   Chocolate Bar: $.85 <br />
+</p> 
+
+<p id = "tax1"></p>
+<p id="total1"></p>
+
+<a href="#" onclick="javascript:openReceiptWindow();">Click for Receipt</a>
+
+<h2> Order 2 </h2>
+
+<p>  1 Imported Chocolate: $10.00 <br />
+     1 Imported Perfume: $47.50 <br />
+</p> 
+
+<p id = "tax2"></p>
+<p id="total2"></p>
+
+<a href="#" onclick="javascript:openReceiptWindow2();">Click for Receipt</a>
+
+<h2> Order 3 </h2>
+
+<p> 1 Imported Perfume: $27.99 <br />
+    1 Perfume: $18.99 <br />
+    1 Headache Pills: $9.75 <br />
+    1 Imported Chocolate: $11.25 <br />
+</p> 
+
+<p id = "tax3"></p>
+<p id= "total3"></p>
+
+<a href="#" onclick="javascript:openReceiptWindow3();">Click for Receipt</a>
+
+<div><a href="#top">Return to Top</a></div>
+<script>
+
+    var $book = 12.49;	
+	var $CD = 14.99;
+	var $chocBar = .85;
+    var $impChoc1 = 10.00;
+	var $impPerfume1 = 47.50; 
+	var $imp =.15;
+    var $impPerfume2 = 27.99;
+	var $perfume = 18.99;
+	var $pills = 9.75;
+	var $impChoc2 = 11.25;
+
+	
+	var $domestic = .10;
+    var $imp =.15;
+    var $impex = .05;
+
+	var $tax1 = ($CD * $domestic)
+	var $total1 = ($book + $CD + ($CD * $domestic)+ $chocBar);
+    var $tax2 = (($impChoc1 * $impex) + ($impPerfume1 * $imp));
+	var $total2 = ($impChoc1 + $impPerfume1 + (($impChoc1 * $impex) + ($impPerfume1 * $imp)));
+    var $tax3 = (($impPerfume2 * $imp)+($perfume * $domestic)+($impChoc2 * $impex));
+	var $total3 = (($impPerfume2 + $perfume + $pills + $impChoc2)+(($impPerfume2 * $imp)+($perfume * $domestic)+($impChoc2 * $impex)));
+	
+document.getElementById("tax1").innerHTML ="Tax: $" + $tax1.toFixed(2);	
+document.getElementById("total1").innerHTML ="Total: $" + $total1.toFixed(2);
+
+document.getElementById("tax2").innerHTML ="Tax: $" + $tax2.toFixed(2);		
+document.getElementById("total2").innerHTML ="Total: $" + $total2.toFixed(2);
+
+document.getElementById("tax3").innerHTML ="Tax: $" + $tax3.toFixed(2);		
+document.getElementById("total3").innerHTML ="Total: $" + $total3.toFixed(2);
+
+function openReceiptWindow() {
+        window.open('receipt.htm','receiptWindow','width=300,height=400');
+    }
+function openReceiptWindow2() {
+        window.open('receipt2.htm','receiptWindow','width=300,height=400');
+    }
+function openReceiptWindow3() {
+        window.open('receipt3.htm','receiptWindow','width=300,height=400');
+    }
+
+
+</script>
+</body>
+</html>

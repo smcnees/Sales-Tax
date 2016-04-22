@@ -1,0 +1,53 @@
+<html>
+
+<head>
+
+<style>
+body{
+    background-color: #E0E0E0;}
+
+   h1{font-family: Arial;
+     text-align: center;
+     font-size: 1.8em;
+	 }
+	
+   h2{font-family: Arial;
+      text-align: center;
+	  }
+
+   p{font-family: Arial;
+     font-size: .9em;
+	 font-weight: 2px;
+	 }
+</style>
+
+</head>
+<body>
+
+<h1>Order 1 Receipt</h1>
+
+
+<p> 1   Book:          $12.49 <br />
+    1   CD:            $14.99 <br />
+    1   Chocolate Bar: $.85 <br />
+</p> 
+
+<p id = "tax1"></p>
+<p id= "total1"></p>
+
+<script>
+    var $book = 12.49;	
+	var $CD = 14.99;
+	var $chocBar = .85;
+	
+	var $domestic = .10;
+	var $tax1 = ($CD * $domestic)
+	var $total1 = ($book + $CD + ($CD * $domestic)+ $chocBar);
+	
+document.getElementById("tax1").innerHTML ="Tax: $" + $tax1.toFixed(2);	
+document.getElementById("total1").innerHTML ="Total: $" + $total1.toFixed(2);
+</script>
+
+
+</body>
+</html>

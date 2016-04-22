@@ -1,0 +1,61 @@
+<html>
+
+<head>
+
+<style>
+body{
+    background-color: #E0E0E0;}
+
+   h1{font-family: Arial;
+     text-align: center;
+     font-size: 1.8em;
+	 }
+	
+   h2{font-family: Arial;
+      text-align: center;
+	  }
+
+   p{font-family: Arial;
+     font-size: .9em;
+	 font-weight: 2px;
+	 }
+</style>
+
+</head>
+<body>
+
+<h1>Order 3 Receipt</h1>
+
+
+<p> 1 Imported Perfume: $27.99<br />
+    1 Perfume: $18.99<br />
+    1 Headache Pills: $9.75<br />
+    1 Imported Chocolate: $11.25 <br />
+</p> 
+
+<p id = "tax3"></p>
+<p id= "total3"></p>
+<script>
+    var $impPerfume2 = 27.99;
+	var $perfume = 18.99;
+	var $pills = 9.75;
+	var $impChoc2 = 11.25;
+	
+	var $domestic = .10;
+	var $imp =.15;
+	var $impex = .05;
+	var $tax3 = (($impPerfume2 * $imp)+($perfume * $domestic)+($impChoc2 * $impex));
+	var $total3 = (($impPerfume2 + $perfume + $pills + $impChoc2)+(($impPerfume2 * $imp)+($perfume * $domestic)+($impChoc2 * $impex)));
+	
+document.getElementById("tax3").innerHTML ="Tax: $" + $tax3.toFixed(2);		
+document.getElementById("total3").innerHTML ="Total: $" + $total3.toFixed(2);
+</script>
+
+<script>
+    var $tax3 = (($impPerfume2 * $imp)+($perfume * $domestic)+($impChoc2 * $impex));
+	var $total3 = (($impPerfume2 + $perfume + $pills + $impChoc2)+(($impPerfume2 * $imp)+($perfume * $domestic)+($impChoc2 * $impex)));
+</script>
+
+
+</body>
+</html>
